@@ -10,10 +10,6 @@ return {
                 position = "right",
               },
             },
-            -- show everything, including gitignored files
-            filtered_items = {
-              git_ignore = false,
-            },
           },
         },
       },
