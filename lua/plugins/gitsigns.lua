@@ -8,6 +8,6 @@ return {
       delay = 500, -- delay in ms before blame appears
       ignore_whitespace = true,
     },
-    current_line_blame_formatter = "<author>, <author_time:%R> • <summary>",
+    current_line_blame_formatter = "<author>, <author_time:%R> • <summary> • <abbrev_sha>",
   },
 }
