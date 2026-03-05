@@ -10,5 +10,11 @@ return {
         },
       },
     })
+
+    opts.servers.eslint = vim.tbl_deep_extend("force", opts.servers.eslint or {}, {
+      settings = {
+        workingDirectory = { mode = "location" },
+      },
+    })
   end,
 }
