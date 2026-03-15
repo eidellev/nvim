@@ -4,3 +4,5 @@
 vim.keymap.set("n", "<C-/>", function()
   require("snacks").terminal.toggle()
 end, { desc = "Toggle Terminal" })
+
+vim.keymap.set("n", "-", "<CMD>Oil --float<CR>", { desc = "Open parent directory" })
