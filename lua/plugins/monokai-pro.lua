@@ -5,7 +5,7 @@ return {
   config = function()
     require("monokai-pro").setup({
       -- Customize your settings here
-      filter = "spectrum", -- Available: "classic" | "octagon" | "pro" | "machine" | "ristretto" | "spectrum"
+      filter = "spectrum",
       terminal_colors = true,
       devicons = true,
       styles = {
@@ -16,6 +16,7 @@ return {
       override = function(c)
         return {
           -- Main Picker UI
+          SnacksPickerTree = { fg = c.base.yellow, bg = c.editor.background },
           SnacksPicker = { bg = c.editor.background, fg = c.editor.foreground },
           SnacksPickerBorder = { fg = c.base.white, bg = c.editor.background },
 
@@ -23,8 +24,6 @@ return {
           SnacksPickerPrefix = { fg = c.base.magenta, bold = true },
           SnacksPickerPrompt = { fg = c.base.yellow, italic = true },
           SnacksPickerTitle = { fg = c.base.yellow, bold = true },
-
-          SnacksPickerTree = { fg = c.base.yellow, bg = c.editor.background },
 
           -- List & Selection
           SnacksPickerListCursorLine = { bg = c.editor.findMatchBackground, bold = true },
