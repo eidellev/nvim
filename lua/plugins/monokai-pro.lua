@@ -19,6 +19,8 @@ return {
           SnacksPickerTree = { fg = c.base.yellow, bg = c.editor.background },
           SnacksPicker = { bg = c.editor.background, fg = c.editor.foreground },
           SnacksPickerBorder = { fg = c.base.white, bg = c.editor.background },
+          SnacksPickerInputBorder = { fg = c.base.white, bg = c.editor.background },
+          SnacksPickerBoxBorder = { fg = c.base.white, bg = c.editor.background },
 
           SnacksPickerInput = { bg = c.editor.background, fg = c.base.cyan },
           SnacksPickerPrefix = { fg = c.base.magenta, bold = true },
