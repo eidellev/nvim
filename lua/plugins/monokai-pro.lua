@@ -15,21 +15,28 @@ return {
       },
       override = function(c)
         return {
-          -- Main Picker UI
-          SnacksPickerTree = { fg = c.base.yellow, bg = c.editor.background },
-          SnacksPicker = { bg = c.editor.background, fg = c.editor.foreground },
-          SnacksPickerBorder = { fg = c.base.white, bg = c.editor.background },
-          SnacksPickerInputBorder = { fg = c.base.white, bg = c.editor.background },
-          SnacksPickerBoxBorder = { fg = c.base.white, bg = c.editor.background },
+          SnacksDashboardNormal = { bg = c.editor.background, fg = c.editor.foreground },
+          SnacksDashboardDesc = { fg = c.base.dimmed1 },
+          SnacksDashboardIcon = { fg = c.base.blue },
+          SnacksDashboardFooter = { fg = c.base.green },
+          SnacksDashboardHeader = { fg = c.base.yellow },
+          SnacksDashboardSpecial = { fg = c.base.yellow, bold = true },
 
-          SnacksPickerInput = { bg = c.editor.background, fg = c.base.cyan },
-          SnacksPickerPrefix = { fg = c.base.magenta, bold = true },
-          SnacksPickerPrompt = { fg = c.base.yellow, italic = true },
-          SnacksPickerTitle = { fg = c.base.yellow, bold = true },
+          SnacksTitle = { bg = c.sideBar.background, fg = c.base.yellow, bold = true },
 
-          -- List & Selection
-          SnacksPickerListCursorLine = { bg = c.editor.findMatchBackground, bold = true },
+          -- Explorer
+          SnacksPickerTree = { bg = c.sideBar.background, fg = c.editorIndentGuide.background },
+
+          -- Picker
+          SnacksPicker = { bg = c.sideBar.background, fg = c.sideBar.foreground },
+          SnacksPickerList = { bg = c.sideBar.background, fg = c.sideBar.foreground },
           SnacksPickerMatch = { fg = c.base.yellow, bold = true },
+          SnacksPickerInputBorder = { bg = c.sideBar.background, fg = c.sideBar.foreground },
+          SnacksPickerTitle = { bg = c.sideBar.background, fg = c.base.yellow, bold = true },
+          SnacksPickerPrompt = { bg = c.sideBar.background, fg = c.base.blue },
+          SnacksPickerBorder = { bg = c.sideBar.background, fg = c.sideBar.foreground },
+          SnacksPickerTotals = { fg = c.base.dimmed3 },
+          SnacksPickerDir = { fg = c.sideBar.foreground },
 
           OilDir = { fg = c.base.green, bold = true },
           OilFile = { fg = c.base.white },
