@@ -9,5 +9,6 @@ return {
       ignore_whitespace = true,
     },
     current_line_blame_formatter = "<author>, <author_time:%R> • <summary> • <abbrev_sha>",
+    update_debounce = 300, -- Increase delay (in ms) between updates
   },
 }

@@ -13,6 +13,7 @@ return {
         keyword = { italic = true },
         type = { italic = true },
       },
+      transparent_background = true,
       override = function(c)
         return {
           SnacksDashboardNormal = { bg = c.editor.background, fg = c.editor.foreground },
@@ -52,7 +53,7 @@ return {
           OilPermissionWrite = { fg = c.base.yellow },
           OilPermissionExecute = { fg = c.base.green },
 
-          NormalFloat = { bg = c.editor.background },
+          NormalFloat = { bg = c.sideBar.background },
           FloatBorder = { bg = c.editor.background, fg = c.base.white },
         }
       end,
