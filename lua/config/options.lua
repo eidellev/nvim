@@ -3,4 +3,4 @@
 -- Add any additional options here
 -- vim.g.colorscheme = "catppuccin-mocha"
 vim.g.root_spec = { "cwd" }
-vim.g.lazyvim_ts_lsp = "tsgo"
+-- vim.g.lazyvim_ts_lsp = "tsgo"
