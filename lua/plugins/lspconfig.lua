@@ -40,5 +40,20 @@ return {
         workingDirectory = { mode = "location" },
       },
     })
+
+    opts.servers.cssls = vim.tbl_deep_extend("force", opts.servers.cssls or {}, {
+      capabilities = (function()
+        local capabilities = vim.lsp.protocol.make_client_capabilities()
+        capabilities.textDocument.completion.completionItem.snippetSupport = true
+        return capabilities
+      end)(),
+      settings = {
+        css = {
+          lint = {
+            unknownAtRules = "ignore", -- Keeps diagnostic squigglies away from modern @rules like @container, @tailwind, etc.
+          },
+        },
+      },
+    })
   end,
 }
