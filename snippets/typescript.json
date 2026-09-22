@@ -1,0 +1,11 @@
+{
+  "React Hook (camelCase)": {
+    "prefix": "hk",
+    "body": [
+      "export function ${1:${TM_FILENAME_BASE/[-_]([a-zA-Z0-9])/${1:/capitalize}/g}}() {",
+      "  $0",
+      "};"
+    ],
+    "description": "New custom hook (camelCase)"
+  }
+}

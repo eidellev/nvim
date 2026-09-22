@@ -6,7 +6,7 @@ return {
     }
 
     opts.servers.vtsls = vim.tbl_deep_extend("force", opts.servers.vtsls or {}, {
-      cmd = { "vtsls", "--stdio", "--max-old-space-size=8192" },
+      cmd = { "vtsls", "--stdio", "--max-old-space-size=16384" },
       settings = {
         typescript = {
           tsserver = {

@@ -1,0 +1,20 @@
+{
+  "React component": {
+    "prefix": "cmp",
+    "body": [
+      "import React from 'react'",
+      "",
+      "type ${1:${TM_FILENAME_BASE}}Props = {",
+      "}",
+      "",
+      "export function ${1:${TM_FILENAME_BASE}}({ ${3} }:${1:${TM_FILENAME_BASE}}Props) {",
+      "  return (",
+      "    <div>",
+      "      $0",
+      "    </div>",
+      "  );",
+      "};"
+    ],
+    "description": "New component"
+  }
+}
