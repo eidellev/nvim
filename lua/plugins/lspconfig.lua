@@ -2,34 +2,43 @@ return {
   "neovim/nvim-lspconfig",
   opts = function(_, opts)
     opts.codelens = {
-      enabled = true,
+      enabled = false, -- Disabling global codelens prevents massive workspace re-scans on open
     }
 
     opts.servers.vtsls = vim.tbl_deep_extend("force", opts.servers.vtsls or {}, {
-      cmd = { "vtsls", "--stdio", "--max-old-space-size=16384" },
+      -- Set Node memory limit via environment variables to ensure the node binary inherits it
+      cmd_env = {
+        NODE_OPTIONS = "--max-old-space-size=16384",
+      },
       settings = {
         typescript = {
           tsserver = {
-            maxTsServerMemory = 8192,
+            maxTsServerMemory = 16384,
+            -- Do not watch huge node_modules folders
+            watchOptions = {
+              excludeDirectories = { "**/node_modules", "**/dist", "**/.next" },
+            },
           },
+          -- Disable resource-heavy CodeLens options across all functions
           referencesCodeLens = {
-            enabled = true,
-            showOnAllFunctions = true, -- Optional: shows on internal functions too, not just exported ones
+            enabled = false,
+            showOnAllFunctions = false,
           },
           implementationsCodeLens = {
-            enabled = true,
+            enabled = false,
           },
         },
-      },
-      javascript = {
-        referencesCodeLens = { enabled = true },
-        implementationsCodeLens = { enabled = true },
-      },
-      vtsls = {
-        -- Prevent vtsls from eagerly checking status on all files
-        experimental = {
-          completion = {
-            enableServerSideFuzzyMatch = true,
+        javascript = {
+          referencesCodeLens = { enabled = false },
+          implementationsCodeLens = { enabled = false },
+        },
+        vtsls = {
+          -- Enable project-references for monorepos (pnpm / yarn / npm workspaces)
+          autoUseWorkspaceTsdk = true,
+          experimental = {
+            completion = {
+              enableServerSideFuzzyMatch = true,
+            },
           },
         },
       },
@@ -50,7 +59,7 @@ return {
       settings = {
         css = {
           lint = {
-            unknownAtRules = "ignore", -- Keeps diagnostic squigglies away from modern @rules like @container, @tailwind, etc.
+            unknownAtRules = "ignore",
           },
         },
       },
