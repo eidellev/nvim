@@ -44,12 +44,6 @@ return {
       },
     })
 
-    opts.servers.eslint = vim.tbl_deep_extend("force", opts.servers.eslint or {}, {
-      settings = {
-        workingDirectory = { mode = "location" },
-      },
-    })
-
     opts.servers.cssls = vim.tbl_deep_extend("force", opts.servers.cssls or {}, {
       capabilities = (function()
         local capabilities = vim.lsp.protocol.make_client_capabilities()
