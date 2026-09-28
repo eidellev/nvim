@@ -44,6 +44,25 @@ return {
       },
     })
 
+    opts.servers.oxlint = vim.tbl_deep_extend("force", opts.servers.oxlint or {}, {
+      -- Prevent Oxlint from doing expensive TypeScript/tsgolint analysis
+      -- in the editor. Keep type-aware linting for CI if you want it there.
+      settings = {
+        typeAware = false,
+        typeCheck = false,
+
+        -- For push-diagnostic clients this means lint on save rather
+        -- than continuously while typing.
+        -- Note: Neovim's pull-diagnostic model may ignore this.
+        run = "onSave",
+      },
+
+      -- Avoid sending a diagnostic request for every tiny burst of edits.
+      flags = {
+        debounce_text_changes = 500,
+      },
+    })
+
     opts.servers.cssls = vim.tbl_deep_extend("force", opts.servers.cssls or {}, {
       capabilities = (function()
         local capabilities = vim.lsp.protocol.make_client_capabilities()
