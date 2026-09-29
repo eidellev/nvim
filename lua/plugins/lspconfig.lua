@@ -48,7 +48,7 @@ return {
       -- Prevent Oxlint from doing expensive TypeScript/tsgolint analysis
       -- in the editor. Keep type-aware linting for CI if you want it there.
       settings = {
-        typeAware = false,
+        typeAware = true,
         typeCheck = false,
 
         -- For push-diagnostic clients this means lint on save rather
